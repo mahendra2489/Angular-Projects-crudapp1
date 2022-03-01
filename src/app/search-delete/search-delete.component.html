@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <a routerLink="/register" routerLinkActive="active">Add User</a>
+                <fieldset>
+<input type="text" name="firstName" [(ngModel)]="firstName" id="firstName">
+<button type="button" (click)="findUserByName()">Search</button>
+               
+        <table class="tbl tbl-border">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date</th>
+                <th>Mobile No</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let user of users">
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.date}}</td>
+                <td>{{user.mobileNo}}</td>
+                <td><a href="#" (click)="deleteUser(user.id)">Delete</a></td>
+            </tr>
+        </table>
+    </fieldset>
+
+</div>
+    </div>
+</div>
